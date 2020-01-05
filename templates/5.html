@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+        .top{
+            /* 设置宽度高度背景颜色 */
+            height: 50px;
+            width:100%;
+            background:rgb(189, 181, 181);
+            position: fixed; /*固定在顶部*/
+            top: 0;/*离顶部的距离为0*/
+        }
+        .top ul{
+            /* 清除ul标签的默认样式 */
+            width: 80%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+        }
+        .top li {
+            float:left; /* 使li内容横向浮动，即横向排列  */
+            margin-right:10px;  /* 两个li之间的距离*/
+        }
+
+        .top li a{
+           /* 设置链接内容显示的格式*/
+            display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+            color:white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none; /* 去除下划线 */
+        }
+        .top li a:hover{
+            /* 鼠标选中时背景变为黑色 */
+            background-color: #111;
+        }
+        .top ul li ul{
+            /* 设置二级菜单 */
+            width: auto;
+            background:rgb(189, 181, 181);
+            position: absolute;
+            display: none; /* 默认隐藏二级菜单的内容 */
+
+        }
+        .top ul li ul li{
+            /* 二级菜单li内容的显示 */
+            margin-right:0;
+            float:none;
+            text-align: center;
+        }
+        .top ul li:hover ul{
+            /* 鼠标选中二级菜单内容时 */
+            display: block;
+        }
+       </style>
+</head>
+<body bgcolor="#E0E0E0">
+<div style="height: 60px"></div>
+<div class="top">
+                   <center>
+                    <ul>
+                    <li><a href="/1">中国GDP与吸烟关系</a></li>
+                    <li><a href="/2">中国女性吸烟率</a></li>
+                    <li><a href="/3">中国男性吸烟率</a></li>
+                    <li><a href="/4">中国污染物排放量与吸烟的关系</a></li>
+                      </ul>
+                    </center>
+            </div>
+<div align="center">
+{{ the_sym|safe }}
+{{ the_res|safe }}
+<h2>近年来，我国大力推行经济发展，GDP总值逐渐增加。</h2>
+    <h1>与2、3相结合联系分析，吸烟人数逐渐下降和我国经济水平逐渐提升，说明人民经济条件越好，越会注重身体健康，抵御吸烟。</h1>
+    </div>
+</body>
+</html>
